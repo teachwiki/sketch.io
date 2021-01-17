@@ -2,99 +2,391 @@
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <link rel="image_src" href="sketchpad-logo-image.png"/>
-    <META NAME="Title" CONTENT="sketchpad.pro - Draw, Share, Collaborate - editor">
-    <meta name="keywords" content="drawings, how to draw, quick draw, live draw, paint, sketch, drawing, online board, sketchpad.json, free">
-    <meta name="description" content="Using Sketchpad.pro you can save your sketches on your computer as well as in cloud. This make sharing as simple as just sending a link or file.">
+    <!-- <meta property="og:url" content=""> -->
+    <META NAME="Title" CONTENT="Real-time online drawing board - Draw, Share, Collaborate - sketchpad.pro">
+    <meta name="keywords" content="images, pictures, paste, copy paste, direct paste, paste online, online paster, image editor, draw, image host, screenshot, image upload, image sharing">
+    <meta name="description" content="Sketchpad.pro is like paint for web - it's the fastest way to get simple, collaborative drawing editor without needing any downloads or installations.">
     <meta name="publisher" content="http://timescraper.com">
     <meta name="author" content="Timescraper">
     <link rel="icon" href="favicon.ico">
-    <title>Live Draw - online drawing board - Draw, Share, Collaborate!</title>
-    <!-- Fontawesome -->
-    <link href="fontawesome5/css/all.min.css" rel="stylesheet">
+    <title>Live Draw on Images, Maps or PDF's</title>
+        <meta name="GOOGLEBOT" content="INDEX,FOLLOW,ARCHIVE" />
+    <meta name="ROBOTS" content="INDEX,FOLLOW,ARCHIVE" />
+    <meta name="BOT" content="INDEX,FOLLOW,ARCHIVE" />
+    <meta name="Revisit-After" content="1 day" />
+
+
+    <link rel="icon" href="favicon.ico">
+
+    <!-- Add to home screen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="sketchpad">
+    <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+    <!-- <link rel="apple-touch-icon-precomposed" href="images/icons/icon-precomposed.png"> -->
+
+    
     <!-- PWA for Opera and Chrome -->
     <link rel="manifest" href="manifest.json">
 
-    <link rel="stylesheet" href="css/sketchboard.css">
+    <!-- Windows -->
+    <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#2F3BA2">
 
-    <!-- Custom styles for this template -->
-    <style id="css-config"></style>
+    <!-- Google fonts: Raleway -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
-    <!-- google ads -->
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Fontawesome 5 -->
+    <!-- <script src="fontawesome5/js/all.min.js"></script> -->
 
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/index.css">
+    <!-- Znaczniki JSON-LD wygenerowane przez Asystenta do oznaczania danych Google. -->
+    <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "SoftwareApplication",
+      "name" : "sketchpad.pro",
+      "image" : "https://sketchpad.pro/images/icons/icon-256x256.png",
+      "url" : "https://sketchpad.pro/index.html",
+      "author" : {
+        "@type" : "Person",
+        "name" : "timescraper.com"
+      },
+      "publisher" : {
+        "@type" : "Organization",
+        "name" : "timescraper.com"
+      },
+      "applicationCategory" : "drawing chat graphic video",
+      "downloadUrl" : "https://sketchpad.pro/advanced.html",
+      "operatingSystem" : "html windows osx linux web chromeos browser",
+      "requirements" : "HTML5",
+      "screenshot" : "https://sketchpad.pro/img/screens/screen-1280x720.jpg",
+      "softwareVersion" : "0.5.1"
+    }
+    </script>
   </head>
+
   <body>
     <div class="main">
-      <div class="sketchboard fullscreen-box">
-        <div id="toolbar-outer" class="toolbar-outer panel-background">
-          <div id="toolbar" class="toolbar icon-color">
-          </div>
+      <input style="position:absolute" type="file" name="foregroundImageFile" id="foregroundImageFile" class="custom-file-input" accept=".svg,.png,.gif">
+      <input style="position:absolute" type="file" name="backgroundImagePhotoFile" id="backgroundImagePhotoFile" class="custom-file-input" accept=".jpg,.jpeg,.png,.gif,.svg,.pdf,image/*;capture=camera">
+      <input style="position:absolute" type="file" name="backgroundImagePdfFile" id="backgroundImagePdfFile" class="custom-file-input" accept=".pdf">
+      <input style="position:absolute" type="file" name="foregroundImageFile" id="foregroundImageFile" class="custom-file-input" accept=".png,.gif,.svg">
+
+
+      <nav class="navbar navbar-toggleable fixed-top navbar-inverse bg-inverse">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarMain" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="index.html" title="Draw on image, maps or pdf">sketchpad.pro</a>
+        <div class="collapse navbar-collapse" id="navbarMain">
+          <ul class="nav navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="sketchbook.html" title="Browse your sketches"><i class="fal fa-images hidden-sm-up" aria-hidden="true"></i>
+   my sketches</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="advanced.html" title="Create new drawing board"><i class="fal fa-wrench" aria-hidden="true"></i> advanced</a>
+            </li>
+          </ul>
         </div>
-        <div id="toolbox" class="toolbox panel-background"></div>
-        <div id="plane" class="plane">
-          <div id="sketchpad" class="sketchpad frame-color">
-              <div id="tutorial" class="tutorial">
-                  You can drop or paste images here
+      </nav>
+          <div id="carousel-main" class="carousel slide" data-ride="carousel" data-keyboard="false">
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-main" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-main" data-slide-to="1"></li>
+        <li data-target="#carousel-main" data-slide-to="2"></li>
+      </ol>
+
+      <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active background-center" style="background-image: url(images/slides/photo.jpg);">
+          <!-- <img id="slide-photo-img" class="slide-background" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Photo"> -->
+          <div class="container">
+            <div class="carousel-caption text-left text-right">
+              <h1 class="mb-4"><i class="fal fa-camera-retro" aria-hidden="true"></i> Draw on picture</h1>
+              <p class="desktop-block hidden-sm-up">Sketchpad.pro lets you paste images from your clipboard.</p>
+              <p class="macosx-block tshadow hidden-xs-down">To catch screen into clipboard use <span class="ml-1 key pr-5 pt-3">⇧</span> + <span class="key pr-3 pt-3">ctrl</span> + <span class="key pt-3">cmd ⌘</span> + <span class="key pl-3 pr-3 pt-3 mr-1">4</span><br/><br/>
+              Choose file or paste image or url into input below (cmd ⌘ + v)</p>
+              <p class="windows-block tshadow">Use <span class="key pr-4 pt-1">alt<br/>&nbsp;</span> + <span class="key text-left"><small>print<br/>screen</small></span> to catch current window into clipboard,<br/>☛ you can paste picture image to start drawing (ctrl + v)</p>
+              <p class="linux-block">You can use <span class="key text-left"><small>print<br/>screen</small></span> button on your keyboard to catch current screen to clipboard,<br/>next you can paste image below to get shareable link (ctrl + v)</p>
+              <p class="mobile-block tshadow">You can use your camera to take photo</p>
+              <!-- <keywords style="display: none"> images, pictures, paste, copy paste, direct paste, paste online, online paster, image editor, crop, image host, screenshot, reddit, facebook, video games, graphic arts, online games, photography, image upload, image sharing, funny pictures, twitter photo, tweet photo"</keywords> -->
+              <div class="row mt-3">
+                <div class="offset-md-4 col-md-8">
+                  <div class="input-group">
+                    <input name="backgroundImagePhoto" type="url" class="watch form-control" id="backgroundImagePhoto" placeholder="http://example.com/image.png">
+                    <div id="backgroundImagePhoto-browse" class="input-group-addon btn" data-toggle="tooltip" data-placement="right" title="choose file">Take photo...</div>
+                  </div>
+                  <small>by using this form, you accept <a href="http://imagehost.pro" title="image hosting">terms and conditions</a></small>
+                </div>
               </div>
+              <div class="mt-1"><button id="draw-photo" class="btn btn-primary" role="button">Open Sketchpad</button></div>
+            </div>
           </div>
         </div>
 
-        <div id="chat" class="chat panel-background">
-          <div class="chat-toolbar icon-color">
-              <button class="button chat-icon"><i class="fal fa-comments" aria-hidden="true"></i></button>
-              <div class="webrtc-controls">
-                  <button id="notifications-btn" class="button notifications-btn disabled" title="Chat notifications"><i class="fal fa-bell" aria-hidden="true"></i></button>
-                  <button class="button microphone-btn disabled" title="Voice chat"><i class="fal fa-microphone" aria-hidden="true"></i></button>
-                  <button class="button video-btn disabled" title="Video chat"><i class="fal fa-video" aria-hidden="true"></i></button>
+        <div class="carousel-item background-left" style="background-image: url(images/slides/map.jpg);">
+          <!-- <img id="slide-map-img" class="slide-background" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Map"> -->
+          <div class="container mb-3">
+            <div class="carousel-caption text-left text-left">
+              <h1 class="mb-4"><i class="fal fa-map" aria-hidden="true"></i> Draw on Maps</h1>
+              <p class="tshadow">The easiest way to draw and share Maps!<br/>Enter the location where do you want to go.</p>
+              <!-- <keywords style="display: none">create map, make a map, create map, client maps, customer maps, map itinerary, travel maps, sales territory map, mapping software, map creator, housing maps, real estate maps, new maps</keywords> -->
+              <div class="row">
+                <div class="col-md-6"><input type="text" class="form-control" id="draw-googlemaps-location" placeholder="The White House" value=""></div>
               </div>
-          </div>
-          <div class="video-container">
-              <div class="room-video"></div>
-              <button id="room-video-close" class="button notifications-btn" title="Close video"><i class="fal fa-window-close" aria-hidden="true"></i></button>
-              <img class="video-cover" src="images/video.png" width="320" height="240">
-              <video class="video" draggable="true" poster="images/video.png" muted autoplay></video>
-              <button class="button hold-video"><i class="fal fa-thumbtack" aria-hidden="true"></i></button>
-          </div>
-          <div class="users-outer">
-              <div class="users">
-              </div>
-              <div class="scroll up"><i class="fal fa-angle-up" aria-hidden="true"></i></div>
-              <div class="scroll left"><i class="fal fa-angle-left" aria-hidden="true"></i></div>
-              <div class="scroll right"><i class="fal fa-angle-right" aria-hidden="true"></i></div>
-              <div class="scroll down"><i class="fal fa-angle-down" aria-hidden="true"></i></div>
-          </div>
-          <div class="messageHistory">
-              <div class="spacer"></div>
-          </div>
-          <div class="messageInputBar">
-              <input class="messageInput" id="messageInput" type="text" placeholder="Type a message...">
-              <div class="messageSend disabled" id="messageSend"><i class="fal fa-paper-plane" aria-hidden="true"></i></div>
-          </div>
-        </div>
-        <div id="footer" class="footer panel-background">
-          <div id="pages-el">
-            <div id="pages-outer" class="pages-outer frame-color panel-background">
-              <div id="pages" class="pages">
-              </div>
+              <div class="mt-2 mb-1"><button id="draw-googlemaps" class="btn btn-primary" role="button">Open Maps in Sketchpad</button></div>
             </div>
           </div>
-          <div class="footer-ad">
-            <!-- sketchpad.pro-drawboard -->
-            <ins class="adsbygoogle"
-                style="display:inline-block;width:728px;height:90px"
-                data-ad-client="ca-pub-6488371769988503"
-                data-ad-slot="6491727329"></ins>
+        </div>
+
+        <div class="carousel-item background-center" style="background-image: url(images/slides/pdf.jpg);">
+          <!-- <img id="slide-pdf-img" class="slide-background" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="PDF"> -->
+          <div class="container">
+            <div class="carousel-caption text-center text-center">
+              <h1 class="mb-4"><i class="fal fa-file-pdf" aria-hidden="true"></i> Draw on PDF</h1>
+              <p class="tshadow">You can draw on a PDF like on paper. Choose file to start drawing online markup.</p>
+              <!-- <keywords style="display: none">PDF, annotator, reader, markup, viewer, writer, stylus, pdf-reader, pdf-annotation</keywords> -->
+              <div class="row">
+                <div class="offset-md-2 col-md-8">
+                  <div class="input-group">
+                    <input name="backgroundImagePdf" type="url" class="watch form-control" id="backgroundImagePdf" placeholder="http://example.com/doc.pdf">
+                    <div id="backgroundImagePdf-browse" class="input-group-addon btn" data-toggle="tooltip" data-placement="right" title="choose file">Upload pdf...</div>
+                  </div>
+                </div>
+              </div>
+              <small>by using this form, you accept <a href="http://imagehost.pro" title="pdf online">terms and conditions</a></small>
+              <div class="mt-1"><button id="draw-pdf" class="btn btn-primary" role="button">Open PDF in Sketchpad</button></div>
+            </div>
           </div>
-          <div id="sketchboard-cookie-policy">
-  <strong>We use cookies</strong> to give you the best online experience. By using our website you agree to our use of cookies in accordance with our <a target="_blank" href="regulations.html#cookie-policy">cookie policy</a>. <button id="sketchboard-cookie-policy-close" class="btn btn-primary btn-sm"><i class="fal fa-times" aria-hidden="true"></i></button> 
-</div>
+        </div>
+
+
+
+
+<!-- 
+        <div class="carousel-item" style="background-image: url(images/slides/mandala.jpg);">
+          <div class="container">
+            <div class="carousel-caption text-xs-left">
+              <h1><i class="fa fa-leaf" aria-hidden="true"></i> Mandala</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a id="draw-mandala" class="btn btn-lg btn-primary" href="#" role="button">Click here to draw mandala!</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" style="background-image: url(images/slides/colouring.jpg);">
+          <div class="container">
+            <div class="carousel-caption text-xs-right">
+              <h1>Colouring <i class="fa fa-paint-brush" aria-hidden="true"></i></h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <div class="row">
+                <div class="col-md-4 col-form-label">
+                </div>
+                <div class="col-md-8">
+                  <div class="input-group">
+                    <input name="foregroundImage" type="url" class="watch form-control" id="foregroundImage" placeholder="http://example.com/image.svg" value="http://2.bp.blogspot.com/-Gzr42kx4jj8/Tq2yYWglmPI/AAAAAAAACOo/MLhowEl6MPI/s1600/skull_mandala.png">
+                    <div id="foregroundImage-browse" class="input-group-addon btn" data-toggle="tooltip" data-placement="right" title="choose file">Select SVG...</div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <a class="text-white" target="_blank" href="https://www.google.com/search?as_st=y&tbs=ic%3Atrans&tbm=isch&sa=1&q=colouring+pages&oq=colouring+pages&gs_l=img.3..0l7j0i30k1l3.5016.5645.0.5770.5.3.0.2.2.0.189.398.1j2.3.0....0...1c.1.64.img..0.5.404.HlhctmlJ5sw#imgrc=gZKKWldKZ1g62M%3A"><i class="fa fa-search" aria-hidden="true"></i> search for colouring pages in google...</a>
+                </div>
+              </div>
+              <div class="mt-1"><a id="draw-colouring" class="btn btn-lg btn-primary" href="#" role="button">Start colouring</a></div>
+            </div>
+          </div>
+        </div>
+ -->
+      </div>
+     <a class="carousel-control-prev" href="#carousel-main" title="prev slide" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carousel-main" title="next slide" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+          <div class="container marketing mt-5">
+      <div class="row">
+        <div class="col-lg-4">
+          <p class="display-3"><i class="fal fa-pencil-alt" aria-hidden="true"></i></p>
+          <h2>Draw</h2>
+          <p>Sketchpad.pro is like paint for the web - it's the fastest way to get simple drawing editor without needing any downloads or installations.</p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <p class="display-3"><i class="fal fa-share-alt" aria-hidden="true"></i></p>
+          <h2>Share</h2>
+          <p>Using Sketchpad.pro you can save your sketches on your computer as well as in the cloud. This make sharing as simple as just sending a link or file.</p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <p class="display-3"><i class="fal fa-users" aria-hidden="true"></i></p>
+          <h2>Collaborate</h2>
+          <p>Sketchpad.pro is a collaborative real-time graphic editor. Each user can draw on this same canvas simultaneously.</p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+    </div>
+      <input style="position:absolute" type="file" name="sketchFile" id="sketchFile" class="custom-file-input" accept=".json,application/json">
+
+    <div class="container">
+      <!-- <form id="config"> -->
+        <div>
+          <div class="launcher offset-sm-2 col-sm-8">
+            <div class="text-center">
+              <button disabled id="open-sketchpad" class="mt-1 mb-1 btn btn-primary btn-lg" title="Advanced options" data-content="Use this form to customise your sketchpad">Open Sketchpad</button>
+            </div>
+            <div class="mb-2 mt-1 text-center">
+              <!-- data-toggle="collapse" data-target="#advanced" -->
+              <a href="advanced.html"><i class="fal fa-wrench" aria-hidden="true"></i> advanced options</a> | 
+              <a href="help.html"><i class="fal fa-info" aria-hidden="true"></i> help</a>
+            </div>
+            <div id="advanced" class="collapse">
+              <fieldset class="form-group">
+                <div class="row">
+                  <label for="room" class="col-sm-3 col-form-label">Sketch ID</label>
+                  <div class="col-sm-9">
+                    <div class="input-group">
+                      <input name="token" type="text" class="watch form-control" id="token" placeholder="leave empty for new sketch" data-toggle="tooltip" data-placement="right" title="Enter room name, everyone who knows this name will be able to connect">
+                      <div id="rnd-token" class="input-group-addon" data-toggle="tooltip" data-placement="top" title="choose random sketch id">⚅</div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class="form-group">
+                <div class="row">
+                  <label for="password" class="col-sm-3 col-form-label">Password for editors</label>
+                  <div class="col-sm-9">
+                    <div class="input-group">
+                      <input name="password" type="text" class="watch form-control" id="password" placeholder="secret" data-toggle="tooltip" data-placement="top" title="Only users with this password can edit sketch">
+                      <div id="rnd-password" class="input-group-addon" data-toggle="tooltip" data-placement="top" title="choose random password">⚅</div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset class="form-group has-success" hidden>
+                <div class="row">
+                  <label for="username" class="col-sm-2 col-form-label">Username</label>
+                  <div class="col-sm-10">
+                    <div class="input-group has-warning">
+                      <input type="text" class="form-control form-control-warning" id="username" placeholder="username">
+                      <div class="input-group-addon">⚅</div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+        </div>
+      <!-- </form> -->
+    </div>
+          <div class="container">
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Real-time collaboration. <span class="text-muted">The natural approach to visual communication.</span></h2>
+          <p class="lead">If you’re hosting a meeting or getting a <strong>team</strong> of <strong>people</strong> to <strong>collaborate</strong>, sending them an editable link is the fastest way to get everyone to <strong>work</strong> <strong>together</strong> on the same <strong>drawing</strong> <strong>board</strong>.</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-fluid mx-auto" alt="real time" title="Real-time collaboration. Easy way to visual communication." src="images/index/real-time.jpg" data-holder-rendered="true">
         </div>
       </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7 push-md-5">
+          <h2 class="featurette-heading">Powerful and straightforward. <span class="text-muted">Add sketchpad to your website.</span></h2>
+          <p class="lead">Sketchpad.pro is designed to keep light, fast and simple. It is possible to embed Sketchpad.pro editor into another web application. The <a href="advanced.html" title="free embedded graphic editor">embedded graphic editor</a> can be customized to fit your needs.</p>
+        </div>
+        <div class="col-md-5 pull-md-7">
+          <img class="featurette-image img-fluid mx-auto" alt="embed" title="Powerfull and simple. Add sketchpad to your website." src="images/index/embed.jpg" >
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Sketchpad is free. <span class="text-muted">And allways will be.</span></h2>
+          <p class="lead">Sketchpad.pro is also an open-source <a href="http://developers.sketchpad.pro">project</a>. You can use it as long as you keep it free.</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-fluid mx-auto" alt="free" title="Sketchpad is free" src="images/index/free.jpg" data-holder-rendered="true">
+        </div>
+      </div>
+    </div>
+    
+      <hr class="featurette-divider">
+      <div class="bg-inverse text-white mt-5 pt-5 pb-5 font-weight-lighter footer">
+  <div class="container text-left">
+    <div class="row">
+      <div class="col-12 col-sm-5 col-md-6 col-lg-8">
+        <h4>About</h4>
+        <hr class="bg-faded"/>
+        <p>Sketchpad.pro is like paint for the web - it's the fastest way to get simple drawing editor without needing any downloads or installations.</p>
+      </div>
+      <div class="col-12 col-sm-7 col-md-6 col-lg-4">
+        <h4>Subscribe for updates</h4>
+        <hr class="bg-faded"/>
+        <form method="post" action="https://app.freshmail.com/pl/actions/subscribe/">
+          <input type="hidden" name="subscribers_list_hash" value="0166udz1lf" />
+          <div class="row no-gutters">
+            <div class="col-8">
+              <input class="form-control form-control-sm" type="text" id="freshmail_email" name="freshmail_email" placeholder="your@email.com" />
+            </div>
+            <div class="col-4">
+              <input class="btn btn-sm btn-secondary w-100" type="submit"/>
+            </div>
+            <div class="col-12"><small class="text-muted">You can unsubscribe from our newsletter at any time.</small></div>
+          </div>
+        </form>
+      </div>
+
+      <!-- <div class="col-xs-4">
+        <h4>Useful links</h4>
+        <hr class="bg-faded"/>
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link text-muted" href="http://developers.sketchpad.pro"><i class="fal fa-cogs" aria-hidden="true"></i> Developers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-muted" href="contact.html"><i class="fal fa-envelope" aria-hidden="true"></i> Contact</a>
+          </li>
+        </ul>
+      </div> -->
+
+    </div>  
+  </div>
+  <div class="container text-center mt-5">
+    <div class="row">
+        <div class="col-12">
+            <!-- <p class="float-xs-right"><a href="#">Back to top</a></p> -->
+            <p>sketchpad.pro © 2017 timescraper.com · All rights reserved. <br/>contact<i class="nospam"></i>@<i class="nospam"></i>timescraper.com</p>
+            <p class="small">
+              <a href="regulations.html#cookie-policy">Cookie policy</a> | <a href="regulations.html#privacy-policy">Privacy policy</a> | <a href="regulations.html#terms-of-use">Terms of use</a> | 
+            </p>
+            <small class="text-muted">build: 1570891429565</small>
+        </div>
+    </div>  
+  </div>
+  <div id="popup-cookie-policy" class="alert alert-warning alert-dismissible fade show fixed-bottom alert-cookie" role="alert">
+  <button id="popup-cookie-policy-close" type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <strong>We use cookies</strong> to give you the best online experience. By using our website you agree to our use of cookies in accordance with our <a href="regulations.html#cookie-policy">cookie policy</a>. <button id="popup-cookie-policy-ok" data-dismiss="alert" class="btn btn-primary btn-sm">Got it</button> <a href="regulations.html#cookie-policy" id="popup-cookie-policy-show" class="btn btn-secondary btn-sm">Read more</a>
+</div>
+</div>
+
     </div>
     <div class="spinner">
       <svg viewBox="0 0 32 32" width="32" height="32">
@@ -102,13 +394,22 @@
       </svg>
     </div>
 
+        <script src="js/all.js" defer></script>
 
-      <script src="//mozilla.github.io/pdf.js/build/pdf.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBnnUSjroaIVfKhfoB4hv7JzcfKVquu4Tk",
+        authDomain: "sketchpad-pro.firebaseapp.com",
+        databaseURL: "https://sketchpad-pro.firebaseio.com",
+        storageBucket: "sketchpad-pro.appspot.com",
+        messagingSenderId: "24723223627"
+      };
+      firebase.initializeApp(config);
+    </script>
 
-      <script src="js/sketchpad.js" defer></script>
-
-      <script src="js/sketchboard.js" defer></script>
-      <!-- <script type="text/javascript" src="https://www.youtube.com/iframe_api" defer></script> -->
+    <script src="js/index.js" defer></script>
     <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
