@@ -1,0 +1,70 @@
+/*html, body {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #fffffe;
+  cursor: url(../images/cursor.png) 0 0,auto;
+}
+
+.license-box {
+    height: 120px;
+}
+.license-radio {
+    cursor: pointer;
+}
+.subscription-desc {
+	height: 100px;
+}
+*/
+.overlay {
+    position: fixed;
+    left:0px;
+    top:0px;
+    right: 0px;
+    bottom: 0px;
+    background: rgba(0,0,0,.1);
+}
+.color-preview {
+    cursor: pointer;
+}
+.colorpalettePicker {
+    position: absolute;
+    right: 0;
+    z-index: 100;
+    border: 1px solid #aaa;
+    box-shadow: 5px 5px 100px rgba(0,0,0,.5);
+    height: 222px;
+    /*overflow: hidden;*/
+    border-radius: .15rem;
+}
+
+.custom-file-name::after {
+  content:"";
+  display: none;
+}
+
+.transparency-bg {
+  background-image: url("../images/transparency.png");
+  padding: 0;
+  background-position: 50% 50%;
+  background-size: 16px;
+}
+.b-0 {
+  border: 0;
+}
+.oh {
+  overflow: hidden;
+}
+.transparency-bg .color-preview {
+  padding: .5rem .75rem;
+}
+
+#sketch-config-stats .value {
+  font-size: 24px;
+}

@@ -1,1 +1,111 @@
 
+.relative {
+  position: relative;
+}
+
+.z-0 {
+  z-index: 0;
+}
+
+#rnd-token {
+  cursor: pointer;
+}
+
+#rnd-password {
+  cursor: pointer;
+}
+
+#recent-sketches .card .link-block {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/*#recent-sketches .card .contextmenu .btn {
+  display: none;
+}
+*/
+#recent-sketches .card .contextmenu {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+#recent-sketches .card .contextmenu .btn .desc{
+  display: none;
+}
+#recent-sketches .card .contextmenu .btn {
+  background-color: transparent;
+  border-color: transparent;
+  color: black;
+}
+#recent-sketches .card .contextmenu:hover .btn .desc {
+  display: inline-block;
+}
+
+
+#recent-sketches .btn.download {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+}
+
+#recent-sketches .btn.delete {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+#recent-sketches .hidden {
+  display: none;
+}
+
+#recent-sketches .hover .hidden {
+  display: inline;
+}
+
+@media (min-width: 576px) {
+  .card-columns {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 800px) {
+  .card-columns {
+    column-count: 3;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card-columns {
+    column-count: 4;
+  }
+}
+
+.card {
+  height: 200px;
+  background-repeat: repeat;
+  background-image: url("../images/transparency.png");
+  background-size: 16px 16px;
+  border: none;
+}
+.card.googlemaps {
+  background-image: url("../images/transparency_maps.png");
+  background-size: 32px 32px;  
+}
+
+.album {
+  min-height: 50rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: #eceeef;
+}
+
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
+}
