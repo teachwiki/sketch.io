@@ -7,8 +7,8 @@
 var ICONFIG = {
     tmpVersion: 1570891429565,
     dataCacheName: "data-v3",
-    cacheName: "teachwiki.github.io/sketch.io",
-    domain: "teachwiki.github.io/sketch.io",
+    cacheName: "https://teachwiki.github.io/sketch.io/",
+    domain: "https://teachwiki.github.io/sketch.io/",
     shareTitle: "Invitation to Sketchpad.pro",
     shareText: "Join to real-time collaboration whiteboard",
     mailtoSubject: "Invitation to Sketchpad.pro",
