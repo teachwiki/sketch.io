@@ -98,7 +98,7 @@ var ICONFIG = {
     //         "exit"
     //     ]
     // },
-    exitUrl: "/sketch.io/sketchboard.html",
+    exitUrl: "sketchboard.html",
     avaliableTools: [],
     defaultTool: "smoothpen",
 
